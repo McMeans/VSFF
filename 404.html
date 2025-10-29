@@ -1,62 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found - Virginia Student Film Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="/"
+            ><img src="static/images/vsff-icon.png" alt="VSFF Logo"
+          /></a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="/" onclick="window.location.href='/'">Home</a></li>
+            <li>
+              <a href="/#about" onclick="window.location.href='/#about'"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="/#submissions"
+                onclick="window.location.href='/#submissions'"
+                >Submissions</a
+              >
+            </li>
+            <li>
+              <a href="/#contact" onclick="window.location.href='/#contact'"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
+    <!-- 404 Error Section -->
+    <section
+      class="hero-section"
+      style="min-height: 70vh; display: flex; align-items: center"
+    >
+      <div class="container" style="text-align: center">
+        <h1 style="font-size: 4rem; margin-bottom: 1rem; color: #dc2626">
+          404
+        </h1>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white">
+          Page Not Found
+        </h2>
+        <p
+          style="
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Sorry, but the page you were trying to view does not exist. It might
+          have been moved, deleted, or you entered the wrong URL.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="window.location.href='/'">
+            Go Home
+          </button>
+          <button
+            class="btn-secondary"
+            onclick="window.location.href='/#contact'"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
 
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Virginia Student Film Festival. All rights reserved.</p>
+      </div>
+    </footer>
 
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
-
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->

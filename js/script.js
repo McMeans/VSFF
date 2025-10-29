@@ -38,35 +38,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Handle form submission
-  const contactForm = document.querySelector('.contact-form form');
+  // Handle form submission - Netlify Forms version
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+  
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get form data
+      // Show loading state
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
+      
+      // Hide previous messages
+      formMessage.style.display = 'none';
+      
+      // Send to Netlify Forms
       const formData = new FormData(this);
-      const name = formData.get('name') || document.getElementById('name').value;
-      const email = formData.get('email') || document.getElementById('email').value;
-      const subject = formData.get('subject') || document.getElementById('subject').value;
-      const message = formData.get('message') || document.getElementById('message').value;
       
-      // Basic validation
-      if (!name || !email || !message) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-      
-      // Simulate form submission
-      alert('Thank you for your message! We\'ll get back to you soon.');
-      this.reset();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        formMessage.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+        
+        // Reset form
+        this.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        formMessage.textContent = 'Sorry, there was an error sending your message. Please try again.';
+        formMessage.className = 'form-message error';
+        formMessage.style.display = 'block';
+      })
+      .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
     });
   }
 
@@ -103,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Add hover effects to cards
-  const cards = document.querySelectorAll('.bio, .date-card, .award-card, .stat');
+  const cards = document.querySelectorAll('.date-card, .award-card');
   
   cards.forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -121,13 +136,21 @@ document.addEventListener('DOMContentLoaded', function() {
   submissionButtons.forEach(button => {
     if (button.textContent.includes('Submit') || button.textContent.includes('Submission')) {
       button.addEventListener('click', function() {
-        // Scroll to submissions section
+        // Check if this is the main submission button in the submissions section
         const submissionsSection = document.getElementById('submissions');
-        if (submissionsSection) {
-          submissionsSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+        const isMainSubmissionButton = submissionsSection && submissionsSection.contains(this);
+        
+        if (isMainSubmissionButton) {
+          // Navigate to FilmFreeway
+          window.open('https://filmfreeway.com/VirginiaStudentFilmFestival', '_blank');
+        } else {
+          // Scroll to submissions section for other buttons
+          if (submissionsSection) {
+            submissionsSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
         }
       });
     }
@@ -135,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add animation on scroll
   const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.feature, .bio, .stat, .date-card, .award-card');
+    const elements = document.querySelectorAll('.feature, .date-card, .award-card');
     
     elements.forEach(element => {
       const elementTop = element.getBoundingClientRect().top;
@@ -149,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Initialize animation styles
-  const animatedElements = document.querySelectorAll('.feature, .bio, .stat, .date-card, .award-card');
+  const animatedElements = document.querySelectorAll('.feature, .date-card, .award-card');
   animatedElements.forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
