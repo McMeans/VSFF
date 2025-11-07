@@ -1,180 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virginia Student Film Festival</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    #home.hero-section {
-      background: url('images/Bird Logo 2.jpg') no-repeat center center/cover;
-      color: black;
-      text-align: center;
-      padding: 800px 5px;
-    }
-  </style>
-</head>
-<body>
-<!-- Header Section -->
-<header class="main-header">
-  <div class="container">
-    <h1>Virginia Student Film Festival</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#bios">Executive Bios</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#featured-videos">Upload Media</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virginia Student Film Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <img src="static/images/vsff-icon.png" alt="VSFF Logo" />
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#submissions">Submissions</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<!-- Home Section -->
-<section id="home" class="hero-section">
-  <div class="container">
-  </div>
-</section>
-
-<!-- Mission Section -->
-<section id="mission" class="info-section">
-  <div class="container">
-    <h2>Mission Statement</h2>
-    <p>Our mission is to provide a platform for student filmmakers to showcase their talents, celebrate storytelling, and inspire the next generation of creators.</p>
-  </div>
-</section>
-
-<!-- Executive Bios Section -->
-<section id="bios" class="info-section">
-  <div class="container">
-    <h2>Executive Board Bios</h2>
-    <div class="exec-bios">
-      <!-- President -->
-      <div class="bio">
-        <img src="images/ansh-pathapadu.jpg" alt="Ansh Pathapadu">
-        <h3>Ansh Pathapadu</h3>
-        <p><strong>President</strong></p>
-        <p>Ansh Pathapadu is a third year Computer Science Engineering and Studio Art major with a concentration in filmmaking from Fairfax, Virginia. He formed the film festival committee because he hopes to create the opportunity for all student filmmakers to show off their work and celebrate each other. Currently, he is the Vice President of Filmmaker’s Society at UVA, and has been greatly involved in film since high school. He has won awards, such as the Oniros Film Awards for Best Short Script and Best Student Screenwriter, participated in Overcranked, and completed the Adrenaline filmmaking challenge. His favorite theme to explore  is trauma. Alongside cinematography, he has played tennis all of his life and went to Nationals with the UVA Club Tennis team last year.
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <h1>Virginia Student Film Festival</h1>
+        <p class="hero-subtitle">
+          Celebrating the creativity and vision of student filmmakers across
+          Virginia.
         </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="scrollToSection('submissions')">
+            Submit Your Film
+          </button>
+          <button class="btn-secondary" onclick="scrollToSection('about')">
+            Learn More
+          </button>
+        </div>
       </div>
+    </section>
 
-      <!-- Vice President -->
-      <div class="bio">
-        <img src="images/tiernan-caulfield.jpg" alt="Tiernan Caulfield">
-        <h3>Tiernan Caulfield</h3>
-        <p><strong>Vice President</strong></p>
-        <p>Tiernan Caulfield is a third year English major at the University of Virginia. He is from Ashburn, Virginia, and he attended Northern Virginia Community College for two years. There, he created NOVA filmmaking, a student organization dedicated to connecting and educating students and established the NOVA Student Film Festival, the first student-led film festival in the history of the college. He led it for two years before transferring to UVA. When he heard that students were interested in beginning a film festival, he was ecstatic to have the opportunity to apply his experience on a larger scale. His favorite film genre is drama and he has a dog named Tailz.
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="feature">
+          <div class="feature-icon"></div>
+          <h3>Showcase Your Work</h3>
+          <p>
+            Share your creative vision with an audience of film enthusiasts,
+            industry professionals, and fellow students.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"></div>
+          <h3>Win Awards</h3>
+          <p>
+            Compete for prestigious awards in multiple categories, including
+            Best Film, Best Director, and Best Cinematography.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"></div>
+          <h3>Annual Event</h3>
+          <p>
+            Join us for screenings, networking events, and workshops with
+            industry professionals throughout the festival.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Share Your Story?</h2>
+        <p>Submissions are now open for student filmmakers across Virginia.</p>
+        <button class="btn-primary">Submit Your Film Today</button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About the Festival</h2>
+        <p class="about-subtitle">
+          Empowering the next generation of filmmakers
         </p>
-      </div>
 
-      <!-- Programming Lead -->
-      <div class="bio">
-        <img src="images/gabriel-mayor-mora.jpg" alt="Gabriel Mayor-Mora">
-        <h3>Gabriel Mayor-Mora</h3>
-        <p><strong>Programming Lead</strong></p>
-        <p>Gabriel Mayor-Mora is a first year Studio Art major at the University of Virginia. Last year, he was the president of the Verde Film Festival that promotes minority-led films. He joined the Virginia Student Film Festival because of his love of films and past experiences running film festivals in high school. He enjoys making experimental films that mesh his poetry and his favorite genre is horror. Fun fact: he saw Ice Cube at the airport.
+        <div class="about-content">
+          <div class="mission-content">
+            <h3>Our Mission</h3>
+            <p>
+              The Virginia Student Film Festival is dedicated to celebrating and
+              promoting the work of talented student filmmakers across Virginia.
+              We provide a platform for emerging artists to showcase their
+              creativity, connect with industry professionals, and gain
+              recognition for their craft.
+            </p>
+          </div>
+
+          <div class="vision-values">
+            <div class="vision">
+              <div class="vision-icon target-icon"></div>
+              <div class="vision-content">
+                <h4>Our Vision</h4>
+                <p>
+                  To be Virginia's premier platform for student filmmakers to
+                  share their stories and launch their careers.
+                </p>
+              </div>
+            </div>
+            <div class="values">
+              <div class="values-icon heart-icon"></div>
+              <div class="values-content">
+                <h4>Our Values</h4>
+                <p>
+                  Creativity, diversity, excellence, and community in
+                  filmmaking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="community">
+          <div class="community-icon"></div>
+          <h3>Our Community</h3>
+          <p>
+            The festival is made possible by a dedicated team of students and
+            industry professionals who believe in the power of student
+            storytelling. Together, we create an environment where creativity
+            thrives and future filmmakers can flourish.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submissions Section -->
+    <section id="submissions" class="submissions-section">
+      <div class="container">
+        <h2>Film Submissions</h2>
+        <p class="submissions-subtitle">
+          Submit your student film to be considered for screening and awards
         </p>
-      </div>
+        <div class="submit-button-container">
+          <button class="btn-primary">Submit Your Film</button>
+        </div>
 
-      <!-- Judging Lead -->
-      <div class="bio">
-        <img src="images/rowan-rosenblum.jpg" alt="Rowan Rosenblum">
-        <h3>Rowan Rosenblum</h3>
-        <p><strong>Judging Lead</strong></p>
-        <p>Rowan Rosenblum is a second year Statistics major from Fairfax, Virginia at the University of Virginia. He joined the Virginia Student Film Festival so he could help spread a love of film across the university and state college system with the hope of giving students the chance to feel unified in their passion for filmmaking. He was the president of his high school’s film club and has been a producer for 3 student films, I See You, For the Last Time, and Robbed Blind at UVA and a few bigger budget short films such as Inclusive Space. He currently works for a film production company as a script analyst and associate line producer.</p>
-      </div>
+        <div class="important-dates">
+          <h3>Important Dates</h3>
+          <div class="date-cards">
+            <div class="date-card">
+              <div class="date-icon calendar-red-icon"></div>
+              <h4>Early Submission</h4>
+              <div class="date">December 1, 2025</div>
+              <p>Reduced entry fee</p>
+            </div>
+            <div class="date-card">
+              <div class="date-icon calendar-red-icon"></div>
+              <h4>Regular Deadline</h4>
+              <div class="date">January 15, 2026</div>
+              <p>Standard entry fee</p>
+            </div>
+            <div class="date-card">
+              <div class="date-icon calendar-red-icon"></div>
+              <h4>Late Deadline</h4>
+              <div class="date">March 1, 2026</div>
+              <p>Late entry fee</p>
+            </div>
+            <div class="date-card">
+              <div class="date-icon trophy-red-icon"></div>
+              <h4>Festival Date</h4>
+              <div class="date">April 4, 2026</div>
+              <p>Screenings & Awards</p>
+            </div>
+          </div>
+        </div>
 
-      <!-- Finance Lead -->
-      <div class="bio">
-        <img src="images/henry-pallatroni.jpg" alt="Henry Pallatroni">
-        <h3>Henry Pallatroni</h3>
-        <p><strong>Finance Lead</strong></p>
-        <p>Henry Pallatroni is a fourth-year Economics Major from North Hampton, New Hampshire. He joined the film festival because he wanted to be a part of a group of motivated students looking to do something extraordinary for Virginia filmmaking. He has always loved films, and his experience working in and around the UVA film scene for the last three years has made him even more excited to help give something back in his last year. His personal favorite drama is thriller! </p>
-      </div>
+        <div class="submission-content">
+          <div class="guidelines">
+            <h3>Submission Guidelines</h3>
+            <ul>
+              <li>
+                Film must be created by a currently enrolled student at a
+                Virginia educational institution
+              </li>
+              <li>Runtime must not exceed 15 minutes (including credits)</li>
+              <li>Film must have been completed within the last 2 years</li>
+              <li>Accepted formats: MP4, MOV, or AVI (HD 1080p preferred)</li>
+              <li>
+                All genres welcome: narrative, documentary, experimental,
+                animation, etc.
+              </li>
+              <li>
+                Films must have proper rights clearance for all music and
+                content
+              </li>
+            </ul>
+          </div>
 
-      <div class="bio">
-        <img src="images/kenneth-nguyen.jpg" alt="Kenneth Nguyen">
-        <h3>Kenneth Nguyen </h3>
-        <p><strong>Marketing Co-Lead</strong></p>
-        <p>Kenneth Nguyen is a third-year student at the University of Virginia, double majoring in Film and Computer Science. With experience working on narrative and commercial projects, Kenneth has collaborated with organizations like the Black & Indigenous Feminist Features Institute, Shelley Whitman Associates, and The Moth: MainStage. His short films have been recognized at international film festivals, and he continues to develop new creative works. Kenneth is thrilled to serve as the marketing co-lead for the Virginia Student Short Film Festival.
+          <div class="requirements">
+            <div class="requirements-card">
+              <div class="requirements-icon document-icon"></div>
+              <h4>What You'll Need</h4>
+              <ul>
+                <li>Film file (HD quality)</li>
+                <li>Film synopsis (max 250 words)</li>
+                <li>Director's statement</li>
+                <li>Film stills (3-5 high-res images)</li>
+                <li>Proof of student status</li>
+                <li>Credits list</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="award-categories">
+          <h3>Award Categories</h3>
+          <div class="award-grid">
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Picture</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Director</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Screenplay</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Editing</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Cinematography</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Best Actor</h4>
+            </div>
+            <div class="award-card">
+              <div class="award-icon trophy-red-icon"></div>
+              <h4>Audience Choice Award</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <p class="contact-subtitle">
+          Have questions? We'd love to hear from you.
         </p>
+
+        <div class="contact-content">
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="contactForm" name="contact" netlify netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <!-- Hidden honeypot field for spam protection -->
+              <p style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="What's this about?"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us more..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-full-width">
+                Send Message
+              </button>
+            </form>
+            <div
+              id="formMessage"
+              class="form-message"
+              style="display: none"
+            ></div>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-details">
+              <h3>Contact Information</h3>
+              <div class="contact-item">
+                <div class="contact-icon email-icon"></div>
+                <div>
+                  <h4>Email</h4>
+                  <p>vastudentff@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon location-icon"></div>
+                <div>
+                  <h4>Located at the Paramount Theater</h4>
+                  <p>
+                    215 E Main St <br />
+                    Charlottesville, VA 22902
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-media">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a
+                  href="https://www.instagram.com/vastudentfilmfest/"
+                  target="_blank"
+                  class="social-icon instagram-icon"
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Marketing Lead -->
-      <div class="bio">
-        <img src="images/iresha-choudhary.jpg" alt="Iresha Choudhary">
-        <h3>Iresha Choudhary</h3>
-        <p><strong>Marketing Lead</strong></p>
-        <p>Iresha Choudhary is a first year Political Philosophy and Policy major with an interest in film and law from Richmond, Virginia. She joined this festival because she really loves filmmaking and wanted to get involved as much as possible. In the past, she has had experiences directing, assistant directing, and producing films like Blinded, Two Sides of the Same Cards, and She Likes Her Coffee Black, which comments on the normalized aspects of racism in everyday life. She is honored to have had three of her screenplays produced and filmed. Last summer, she was able to attend Northwestern’s summer film program with a concentration in screenwriting. She loves writing and filming thrillers and half-serious mysteries.</p>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Virginia Student Film Festival. All rights reserved.</p>
       </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- Event Details Section -->
-<section id="event-details" class="info-section">
-  <div class="container">
-    <h2>Event Details</h2>
-    <p>Mark your calendars! The Virginia Student Film Festival will take place on <strong>April 6th</strong> at the <strong>Paramount Theater</strong> in Charlottesville, Virginia.</p>
-    <p>Join us for an unforgettable day of inspiring student films, engaging discussions, and a celebration of storytelling!</p>
-  </div>
-</section>
-
-<!-- History Section -->
-<section id="history" class="info-section">
-  <div class="container">
-    <h2>Festival History</h2>
-    <p>Founded in 2024, the Virginia Student Film Festival has been a hub for young filmmakers to share their stories.</p>
-  </div>
-</section>
-
-<!-- Featured Videos -->
-<section id="featured-videos" class="info-section">
-  <div class="container">
-    <h2>Featured Videos</h2>
-    <div class="video-container" id="video-list">
-    </div>
-    <button onclick="addVideo()">Add More Videos</button>
-  </div>
-</section>
-
-
-
-
-
-<script src="script.js"></script>
-<script>
-  function addVideo() {
-    const videoList = document.getElementById('video-list');
-    let url = prompt('Enter YouTube URL:');
-
-    if (url && url.includes("youtube.com")) {
-      const newIframe = document.createElement('iframe');
-      newIframe.width = '560';
-      newIframe.height = '315';
-      newIframe.src = url;
-      newIframe.title = 'YouTube video player';
-      newIframe.frameborder = '0';
-      newIframe.allowFullscreen = true;
-      videoList.appendChild(newIframe);
-    } else {
-      alert('Invalid URL. Please enter a valid YouTube embed URL.');
-    }
-  }
-
-</script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
-
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2024 Virginia Student Film Festival. All rights reserved.</p>
-    <p>Website designed by Jaylen C. Anderson</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-
