@@ -58,13 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
       // Send to Netlify Forms
       const formData = new FormData(this);
       
-      fetch('/', {
+      fetch('/.netlify/functions/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
       })
-      .then(() => {
-        formMessage.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+      .then(async response => {
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        formMessage.textContent = result.message || 'Thank you for your message! We\'ll get back to you soon.';
         formMessage.className = 'form-message success';
         formMessage.style.display = 'block';
         
